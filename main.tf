@@ -95,7 +95,7 @@ resource "aws_instance" "app_server" {
   instance_type          = "t3.small"
   subnet_id              = aws_subnet.sandbox_subnet.id
   vpc_security_group_ids = [aws_security_group.app_sg.id]
-  key_name               = "terraform-key"
+  key_name               = "kd-key"
 
   user_data = templatefile("${path.module}/cloud-init.yaml.tmpl", {
     instance_name       = "hard-to-heat-homes-2.0"
