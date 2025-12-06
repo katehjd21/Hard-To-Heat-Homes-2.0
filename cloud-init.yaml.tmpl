@@ -30,18 +30,18 @@ runcmd:
   - systemctl start docker
   - systemctl enable docker
 
-  - git clone https://github.com/ptreedev/Hard_to_heat_homes_2.0 /home/ubuntu/Hard_to_heat_homes_2.0
+  - git clone https://github.com/katehjd21/Hard-To-Heat-Homes-2.0 /home/ubuntu/Hard-To-Heat-Homes-2.0
 
   - |
-    cat > /home/ubuntu/Hard_to_heat_homes_2.0/.env << 'EOF'
+    cat > /home/ubuntu/Hard-To-Heat-Homes-2.0/.env << 'EOF'
     EPC_ENCODED_API_KEY=${epc_api_key}
     OS_API_KEY=${os_api_key}
     SESSION_SECRET_KEY=${session_secret_key}
     EOF
-  - chmod 600 /home/ubuntu/Hard_to_heat_homes_2.0/.env
-  - chown ubuntu:ubuntu /home/ubuntu/Hard_to_heat_homes_2.0/.env
+  - chmod 600 /home/ubuntu/Hard-To-Heat-Homes-2.0/.env
+  - chown ubuntu:ubuntu /home/ubuntu/Hard-To-Heat-Homes-2.0/.env
 
-  - docker build -t myapp:latest /home/ubuntu/Hard_to_heat_homes_2.0
+  - docker build -t myapp:latest /home/ubuntu/Hard-To-Heat-Homes-2.0
 
   - docker stop myapp || true
   - docker rm myapp || true
