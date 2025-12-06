@@ -11,24 +11,6 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
-variable "epc_api_key" {
-  description = "EPC API key"
-  type        = string
-  sensitive   = true
-}
-
-variable "os_api_key" {
-  description = "OS API key"
-  type        = string
-  sensitive   = true
-}
-
-variable "session_secret_key" {
-  description = "session secret key"
-  type = string
-  sensitive = true
-}
-
 # resource "tls_private_key" "ssh_key" {
 #   algorithm = "RSA"
 #   rsa_bits  = 4096
